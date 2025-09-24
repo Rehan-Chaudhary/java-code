@@ -1,0 +1,21 @@
+import java.util.Arrays;
+
+public class DeleteElement {
+    public static void main(String[] args) {
+        int[] original = {1, 2, 3, 4, 5};
+        int position = 2; 
+
+        if (position < 0 || position >= original.length) {
+            System.out.println("Invalid position");
+            return;
+        }
+        int[] newArray = new int[original.length - 1];
+        for (int i = 0; i < position; i++) {
+            newArray[i] = original[i];
+        }
+        for (int i = position + 1; i < original.length; i++) {
+            newArray[i - 1] = original[i];
+        }
+        System.out.println(Arrays.toString(newArray));
+    }
+}
